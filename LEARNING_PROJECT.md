@@ -59,9 +59,9 @@ the new roadmap's topics, prerequisites, and milestones from the new goal.
 
 A reusable setup request can be as short as this.
 
-> Set up a learning project for [subject] using `LEARNING_PROJECT.md`. Help me
-> narrow the goal and agree on a small first milestone. Build `ROADMAP.md` around
-> the questions we choose and the behavior we can observe to answer them.
+> Set up a learning project for [subject] using `LEARNING_PROJECT.md`.
+> Work with me to define the learning goal and agree on a small first
+> milestone. Then update `README.md` and create `AGENTS.md` and `ROADMAP.md`.
 
 When a reference would help, add a sentence such as this.
 
