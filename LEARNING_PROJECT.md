@@ -34,6 +34,10 @@ make the important mechanisms visible.
   original plan.
 - Keep optional follow-ups separate from the main learning path.
 - Mark each milestone complete when its stated learning objective is met.
+- Explain the fundamental concepts and important mechanisms behind each learning
+  unit before assuming the learner understands them.
+- Use implementation and experiments to reinforce conceptual understanding,
+  rather than treating implementation itself as the learning goal.
 
 ## Setting Up A New Project
 
@@ -45,7 +49,7 @@ directions and a small experiment for each. Ask a focused question about what
 they already know, what interests them, or what they want to be able to explain
 by the end. Use what they have already shared and ask about details that would
 change the roadmap. Agree on an initial goal and a first observable milestone
-before writing `TODO.md`. Revisit the goal as the first experiments reveal new
+before writing `ROADMAP.md`. Revisit the goal as the first experiments reveal new
 questions.
 
 An earlier project can serve as an optional example. Name the file or section
@@ -56,25 +60,42 @@ the new roadmap's topics, prerequisites, and milestones from the new goal.
 A reusable setup request can be as short as this.
 
 > Set up a learning project for [subject] using `LEARNING_PROJECT.md`. Help me
-> narrow the goal and agree on a small first milestone. Build `TODO.md` around
+> narrow the goal and agree on a small first milestone. Build `ROADMAP.md` around
 > the questions we choose and the behavior we can observe to answer them.
 
 When a reference would help, add a sentence such as this.
 
 > Use [repository and file] as a reference for [specific convention].
 
-## Recommended Project Documents
+Once the initial learning goal and first observable milestone are agreed upon,
+initialize the project documentation.
 
-- `README.md`: project purpose, scope, non-goals, how to run the project, and
-  the current achievement level.
-- `AGENTS.md`: execution instructions for AI agents working in that repository.
-  Keep this focused on project-specific working rules.
-- `TODO.md`: a living roadmap, current milestone status, completed learning
-  units, and open questions.
-- `docs/`: topic-specific learning notes created when an implementation step
-  produces a useful explanation.
-- `examples/`: small executable examples that reproduce important behavior or
-  comparisons.
+- Update `README.md` to describe the project's purpose, learning goals,
+  scope, and non-goals.
+- Create `AGENTS.md` with project-specific working rules and instructions
+  to follow `LEARNING_PROJECT.md`. Avoid duplicating shared guidelines.
+- Create `ROADMAP.md` with the agreed learning goal, first milestone,
+  planned learning themes, and optional follow-ups.
+
+Keep these documents up to date as the project evolves.
+
+## Project Documents
+
+Initialize the following documents when setting up a new learning project.
+
+- `README.md`: project purpose, learning goals, scope, non-goals, how to run
+  the project, and the current achievement level.
+- `AGENTS.md`: instructions for AI agents to follow `LEARNING_PROJECT.md`
+  and project-specific working rules.
+- `ROADMAP.md`: a living roadmap containing learning goals, planned learning
+  themes, milestone status, experiment results, and open questions.
+
+Add the following directories as needed throughout the project.
+
+- `docs/`: topic-specific learning notes and explanations of important
+  concepts and mechanisms.
+- `examples/`: small executable examples that reproduce important behavior
+  or comparisons.
 
 ## Roadmap Shape
 
@@ -98,6 +119,31 @@ for example. General error-message polish, broader edge-case coverage, and
 logging can go under `Optional Follow-ups` when there is a reason to revisit
 them. A follow-up can be simple or advanced. Record relevant limitations next
 to the themes they affect.
+
+## Explaining Core Concepts
+
+Identify the fundamental concepts and important mechanisms needed to understand
+each learning unit. Explain them before the learner is expected to reason about
+the implementation or answer an understanding question.
+
+When introducing an unfamiliar concept, explain the following where relevant.
+
+- What it is and why it exists.
+- How it works at a conceptual level.
+- How it relates to other important concepts.
+- What role it plays in the current learning unit.
+
+Use concrete examples, comparisons, or diagrams when they help make an abstract
+mechanism understandable. Explain prerequisite concepts when they are necessary
+to understand the current topic.
+
+Adapt the depth of the explanation to the learner's existing knowledge.
+Avoid repeating concepts the learner has already demonstrated an understanding
+of, and avoid introducing details unrelated to the current learning objective.
+
+Connect the conceptual explanation to the implementation and observed behavior.
+The learner should understand not only what the code does, but also the
+mechanism that the code demonstrates.
 
 ## Explaining A Completed Learning Unit In Chat
 
@@ -131,6 +177,17 @@ Group mechanical tasks such as setup and renaming into the learning unit they
 support. When part of the explanation is unclear, work through that part with
 a small example and invite the learner to explain it again. A request to move
 on while the check is pending is a cue to ask the question first.
+
+Before asking an understanding question, make sure the fundamental concepts
+and mechanisms needed to answer it have been explained or are already
+understood by the learner.
+
+Do not assume familiarity with unexplained technical terms or mechanisms.
+If the learner struggles because of missing prerequisite knowledge, pause
+the understanding check, explain the missing concepts, and revisit the question.
+
+When the learner raises a related conceptual question, address it before
+advancing to the next learning unit.
 
 ## Completion Criteria
 
